@@ -13,23 +13,26 @@
 - при потвърждение всичко се повтаря
 - в противен случай изпълнението на програмата приключва
 
+Например:
 
-    What is your name? Pesho
-    Hello Pesho!
-    Guess the number: 1
-    Guess the number: 5
-    You win!
-    Do you want to play again? no
+```
+What is your name? Pesho
+Hello Pesho!
+Guess the number: 1
+Guess the number: 5
+You win!
+Do you want to play again? no
 
 
-    What is your name? Gosho
-    Hello Gosho!
-    Guess the number: 3
-    Guess the number: 9
-    Guess the number: 7
-    You loose!
-    Do you want to play again? yes
-    Guess the number: 4
-    Guess the number: 8
-    You win!
-    Do you want to play again? no
+What is your name? Gosho
+Hello Gosho!
+Guess the number: 3
+Guess the number: 9
+Guess the number: 7
+You loose!
+Do you want to play again? yes
+Guess the number: 4
+Guess the number: 8
+You win!
+Do you want to play again? no
+```

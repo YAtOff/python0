@@ -1,3 +1,7 @@
+# python0
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/YAtOff/python0?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ### Полезни връзки за курса
 
  - [Списък на класа] (https://docs.google.com/spreadsheets/d/1rZMFnNCayTSeqSQGRyU7s5a9vK7-jYHsSyEf8dOWL4A/edit?usp=sharing)

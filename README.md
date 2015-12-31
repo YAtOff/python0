@@ -17,6 +17,7 @@
 
  - [Списък на класа] (https://docs.google.com/spreadsheets/d/1rZMFnNCayTSeqSQGRyU7s5a9vK7-jYHsSyEf8dOWL4A/edit?usp=sharing)
  - [Как да инсталираме Python] (http://www.howtogeek.com/197947/how-to-install-python-on-windows/)
+ - [Онлайн среда] (https://trinket.io) - тук може решавате домашните си, ако не ста; може да използвате и `turtle`
  - [Онлайн среда] (https://repl.it) - тук може решавате домашните си, ако не ста
    успяли да инсталирате Python
  - Книги:
@@ -28,3 +29,17 @@
 - [Sublime Text 3] (http://www.sublimetext.com/3)
 - [Atom] (https://atom.io/)
 - [Notepad++] (https://notepad-plus-plus.org/)
+
+
+### Допълнителни курсове
+ - [How to Think Like a Computer Scientis] (http://interactivepython.org/runestone/static/thinkcspy/index.html)
+  Глави:
+  - General Introduction
+  - Simple Python Data
+  - Debugging Interlude
+  - Python Turtle Graphics
+  - Functions
+  - Selection
+  - More About Iteration
+  - Lists
+ - [A Visual Introduction to Python] (https://hourofpython.trinket.io/a-visual-introduction-to-python)

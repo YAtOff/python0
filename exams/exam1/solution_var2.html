@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>solution_var2.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>solution_var2.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <h3><span id="задача-1" href="задача-1"> Задача 1 </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">task1</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;n = &#39;</span><span class="p">))</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>Дефинираме променлова, в който да запазим произведението.
+За начална стойност на произведението задаваме <code>1</code>.
+Това няма да повлияе на крайния резултат, тъй ката <code>1 * x = x</code>.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">product</span> <span class="o">=</span> <span class="mi">1</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>Създаваме брояч, който ще приема стойности от <code>4</code> до <code>n</code> вклюяително,
+през <code>4</code> и умножаваме стойностите на брояча</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">for</span> <span class="n">counter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+        <span class="n">product</span> <span class="o">*=</span> <span class="n">counter</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;product =&#39;</span><span class="p">,</span> <span class="n">product</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <h3><span id="задача-2" href="задача-2"> Задача 2 </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">task2</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;n = &#39;</span><span class="p">))</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <p>Създаваме брояч на редовете, който ще приема стойности от <code>0</code> до <code>n</code></p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>Създаваме брояч на колоните,
+който ще приема стойности от <code>0</code> до <code>n - row</code>, т. е. ще отпечата
+<code>***</code> <code>n</code> пъти за ред <code>0</code>, <code>n - 1</code> пъти за ред 1, и. т. н</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">row</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <p>Отпечатвлме всяка колона, като не отпечатваме символ за край на ред</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="k">print</span><span class="p">(</span><span class="s">&#39;***&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <p>Отпечатвлме символ за край на ред</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="k">print</span><span class="p">()</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Task1&#39;</span><span class="p">)</span>
+<span class="n">task1</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Task2&#39;</span><span class="p">)</span>
+<span class="n">task2</span><span class="p">()</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

@@ -2,6 +2,8 @@
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/YAtOff/python0?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+### [Оценки за първи срок](https://docs.google.com/spreadsheets/d/1CYd9RhEt-VLGUMj_-Ni_m63dZB4YUVyfxNpzv9NEk9E/edit?usp=sharing)
+
 ### Как да предам домашното си
 
 1. Ако нямате Google акаунт - създайте си

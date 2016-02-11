@@ -37,7 +37,7 @@ def min4(x1, x2, x3, x4):
 def avg_max3(x1, x2, x3, x4):
     """
     >>> avg_max3(1, 2, 3, 4)
-    3
+    3.0
     """
     pass
 
@@ -45,7 +45,7 @@ def avg_max3(x1, x2, x3, x4):
 def avg_min3(x1, x2, x3, x4):
     """
     >>> avg_min3(1, 2, 3, 4)
-    3
+    2.0
     """
     pass
 

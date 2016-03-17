@@ -25,6 +25,7 @@
  - Книги:
     - [Python for kids] (http://www.it-ebooks.info/book/2226/)
     - [Practical programming, 2nd edition] (http://www.it-ebooks.info/book/3751/)
+    - [Когато има грешка в кода] (https://www.pinterest.com/pin/8866530494853145/)
 
 
 ### Препоръчани тексотви редактори

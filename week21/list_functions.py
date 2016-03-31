@@ -52,7 +52,7 @@ def tail(xs):
 
 
 @skip
-def equal_lists(xs):
+def equal_lists(xs, ys):
     """
     Напишете функция `equal_lists`, която взима два списъка и връща True, ако двата списъка за еднакви.
 

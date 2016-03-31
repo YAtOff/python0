@@ -15,7 +15,7 @@ def head(xs):
     >>> head([1,2,3])
     1
     >>> head(["Python"])
-    "Python"
+    'Python'
     """
     pass
 
@@ -30,7 +30,7 @@ def last(xs):
     >>> last([1, 2, 3])
     3
     >>> last(["Python"])
-    "Python"
+    'Python'
     """
     pass
 
@@ -114,7 +114,7 @@ def drop(n, xs):
     >>> drop(1, [1, 2, 3])
     [2, 3]
     >>> drop(2, ["Python", "Ruby", "Django", "Rails"])
-    ["Django", "Rails"]
+    ['Django', 'Rails']
     >>> drop(10, [1])
     []
     """

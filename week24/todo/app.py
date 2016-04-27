@@ -8,11 +8,6 @@ from todo import *
 app = Flask(__name__)
 
 tasks = []
-add_task(tasks, 'Create homeworks', '2016-04-30', 'normal', ['school'])
-add_task(tasks, 'Refactor portal', '2016-05-10', 'normal', ['work'])
-add_task(tasks, 'Get in shape', '2016-05-30', 'urgent', ['sport'])
-
-complete_task(tasks, 0)
 
 
 @app.route('/')

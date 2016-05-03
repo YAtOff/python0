@@ -16,22 +16,34 @@ def skip(f):
 
 
 @skip
-def add_task(tasks, title, deadline, priority, tags):
+def add_task(tasks, id, title, deadline, priority, tags):
     """
     >>> tasks = []
-    >>> add_task(tasks, 'Do my homework', '2016-04-30', 'normal', ['school'])
-    >>> tasks == [{'title': 'Do my homework', 'deadline': '2016-04-30', 'priority': 'normal', 'tags': ['school'], 'completed': False }]
+    >>> add_task(tasks, '1', 'Do my homework', '2016-04-30', 'normal', ['school'])
+    >>> tasks == [{'id': '1', 'title': 'Do my homework', 'deadline': '2016-04-30', 'priority': 'normal', 'tags': ['school'], 'completed': False }]
     True
     """
     pass
 
 
 @skip
-def remove_task(tasks, index):
+def find_task(tasks, id):
     """
     >>> tasks = []
-    >>> add_task(tasks, 'Do my homework', '2016-04-30', 'normal', ['school'])
-    >>> remove_task(tasks, 0)
+    >>> add_task(tasks, '1', 'Do my homework', '2016-04-30', 'normal', ['school'])
+    >>> add_task(tasks, '2', 'Do your homework', '2016-04-30', 'normal', ['school'])
+    >>> find_task(tasks, '1')
+    0
+    """
+    pass
+
+
+@skip
+def remove_task(tasks, id):
+    """
+    >>> tasks = []
+    >>> add_task(tasks, '1', 'Do my homework', '2016-04-30', 'normal', ['school'])
+    >>> remove_task(tasks, '1')
     >>> tasks
     []
     """
@@ -39,11 +51,11 @@ def remove_task(tasks, index):
 
 
 @skip
-def complete_task(tasks, index):
+def complete_task(tasks, id):
     """
     >>> tasks = []
-    >>> add_task(tasks, 'Do my homework', '2016-04-30', 'normal', ['school'])
-    >>> complete_task(tasks, 0)
+    >>> add_task(tasks, '1', 'Do my homework', '2016-04-30', 'normal', ['school'])
+    >>> complete_task(tasks, '1')
     >>> tasks[0]['completed']
     True
     """
@@ -51,12 +63,12 @@ def complete_task(tasks, index):
 
 
 @skip
-def uncomplete_task(tasks, index):
+def uncomplete_task(tasks, id):
     """
     >>> tasks = []
-    >>> add_task(tasks, 'Do my homework', '2016-04-30', 'normal', ['school'])
-    >>> complete_task(tasks, 0)
-    >>> uncomplete_task(tasks, 0)
+    >>> add_task(tasks, '1', 'Do my homework', '2016-04-30', 'normal', ['school'])
+    >>> complete_task(tasks, '1')
+    >>> uncomplete_task(tasks, '1')
     >>> tasks[0]['completed']
     False
     """
@@ -67,10 +79,10 @@ def uncomplete_task(tasks, index):
 def get_completed(tasks):
     """
     >>> tasks = []
-    >>> add_task(tasks, 'Do my homework', '2016-04-30', 'normal', ['school'])
-    >>> add_task(tasks, 'Do your homework', '2016-04-30', 'normal', ['school'])
-    >>> complete_task(tasks, 0)
-    >>> get_completed(tasks) == [{'title': 'Do my homework', 'deadline': '2016-04-30', 'priority': 'normal', 'tags': ['school'], 'completed': True}]
+    >>> add_task(tasks, '1', 'Do my homework', '2016-04-30', 'normal', ['school'])
+    >>> add_task(tasks, '2', 'Do your homework', '2016-04-30', 'normal', ['school'])
+    >>> complete_task(tasks, '1')
+    >>> get_completed(tasks) == [{'id': '1', 'title': 'Do my homework', 'deadline': '2016-04-30', 'priority': 'normal', 'tags': ['school'], 'completed': True}]
     True
     """
     pass
@@ -80,8 +92,8 @@ def get_completed(tasks):
 def get_uncompleted(tasks):
     """
     >>> tasks = []
-    >>> add_task(tasks, 'Do my homework', '2016-04-30', 'normal', ['school'])
-    >>> get_uncompleted(tasks) == [{'title': 'Do my homework', 'deadline': '2016-04-30', 'priority': 'normal', 'tags': ['school'], 'completed': False}]
+    >>> add_task(tasks, '1', 'Do my homework', '2016-04-30', 'normal', ['school'])
+    >>> get_uncompleted(tasks) == [{'id': '1', 'title': 'Do my homework', 'deadline': '2016-04-30', 'priority': 'normal', 'tags': ['school'], 'completed': False}]
     True
     """
     pass
@@ -91,11 +103,11 @@ def get_uncompleted(tasks):
 def clear_completed(tasks):
     """
     >>> tasks = []
-    >>> add_task(tasks, 'Do my homework', '2016-04-30', 'normal', ['school'])
-    >>> add_task(tasks, 'Do your homework', '2016-04-30', 'normal', ['school'])
-    >>> complete_task(tasks, 0)
+    >>> add_task(tasks, '1', 'Do my homework', '2016-04-30', 'normal', ['school'])
+    >>> add_task(tasks, '2', 'Do your homework', '2016-04-30', 'normal', ['school'])
+    >>> complete_task(tasks, '1')
     >>> clear_completed(tasks)
-    >>> tasks == [{'title': 'Do your homework', 'deadline': '2016-04-30', 'priority': 'normal', 'tags': ['school'], 'completed': False}]
+    >>> tasks == [{'id': '2', 'title': 'Do your homework', 'deadline': '2016-04-30', 'priority': 'normal', 'tags': ['school'], 'completed': False}]
     True
     """
     pass
@@ -105,9 +117,9 @@ def clear_completed(tasks):
 def filter_by_tag(tasks, tag):
     """
     >>> tasks = []
-    >>> add_task(tasks, 'Do my homework', '2016-04-30', 'normal', ['school'])
-    >>> add_task(tasks, 'Do your homework', '2016-04-30', 'normal', ['work'])
-    >>> filter_by_tag(tasks, 'school') == [{'title': 'Do my homework', 'deadline': '2016-04-30', 'priority': 'normal', 'tags': ['school'], 'completed': False}]
+    >>> add_task(tasks, '1', 'Do my homework', '2016-04-30', 'normal', ['school'])
+    >>> add_task(tasks, '2', 'Do your homework', '2016-04-30', 'normal', ['work'])
+    >>> filter_by_tag(tasks, 'school') == [{'id': '1', 'title': 'Do my homework', 'deadline': '2016-04-30', 'priority': 'normal', 'tags': ['school'], 'completed': False}]
     True
     """
     pass
@@ -117,9 +129,9 @@ def filter_by_tag(tasks, tag):
 def filter_by_date_range(tasks, start_date, end_date):
     """
     >>> tasks = []
-    >>> add_task(tasks, 'Do my homework', '2016-04-30', 'normal', ['school'])
-    >>> add_task(tasks, 'Do your homework', '2016-05-10', 'normal', ['work'])
-    >>> filter_by_date_range(tasks, '2016-04-20', '2016-05-01') == [{'title': 'Do my homework', 'deadline': '2016-04-30', 'priority': 'normal', 'tags': ['school'], 'completed': False}]
+    >>> add_task(tasks, '1', 'Do my homework', '2016-04-30', 'normal', ['school'])
+    >>> add_task(tasks, '2', 'Do your homework', '2016-05-10', 'normal', ['work'])
+    >>> filter_by_date_range(tasks, '2016-04-20', '2016-05-01') == [{'id': '1', 'title': 'Do my homework', 'deadline': '2016-04-30', 'priority': 'normal', 'tags': ['school'], 'completed': False}]
     True
     """
     pass
@@ -129,9 +141,9 @@ def filter_by_date_range(tasks, start_date, end_date):
 def order_by_deadline(tasks):
     """
     >>> tasks = []
-    >>> add_task(tasks, 'Do your homework', '2016-05-10', 'normal', ['work'])
-    >>> add_task(tasks, 'Do my homework', '2016-04-30', 'normal', ['school'])
-    >>> order_by_deadline(tasks) == [{'title': 'Do my homework', 'deadline': '2016-04-30', 'priority': 'normal', 'tags': ['school'], 'completed': False}, {'title': 'Do your homework', 'deadline': '2016-05-10', 'priority': 'normal', 'tags': ['work'], 'completed': False}]
+    >>> add_task(tasks, '1', 'Do your homework', '2016-05-10', 'normal', ['work'])
+    >>> add_task(tasks, '2', 'Do my homework', '2016-04-30', 'normal', ['school'])
+    >>> order_by_deadline(tasks) == [{'id': '2', 'title': 'Do my homework', 'deadline': '2016-04-30', 'priority': 'normal', 'tags': ['school'], 'completed': False}, {'id': '1', 'title': 'Do your homework', 'deadline': '2016-05-10', 'priority': 'normal', 'tags': ['work'], 'completed': False}]
     True
     """
     pass
@@ -141,9 +153,9 @@ def order_by_deadline(tasks):
 def order_by_priority(tasks):
     """
     >>> tasks = []
-    >>> add_task(tasks, 'Do your homework', '2016-05-10', 'normal', ['work'])
-    >>> add_task(tasks, 'Do my homework', '2016-04-30', 'urgent', ['school'])
-    >>> order_by_deadline(tasks) == [{'title': 'Do my homework', 'deadline': '2016-04-30', 'priority': 'urgent', 'tags': ['school'], 'completed': False}, {'title': 'Do your homework', 'deadline': '2016-05-10', 'priority': 'normal', 'tags': ['work'], 'completed': False}]
+    >>> add_task(tasks, '1', 'Do your homework', '2016-05-10', 'normal', ['work'])
+    >>> add_task(tasks, '2', 'Do my homework', '2016-04-30', 'urgent', ['school'])
+    >>> order_by_deadline(tasks) == [{'id': '2', 'title': 'Do my homework', 'deadline': '2016-04-30', 'priority': 'urgent', 'tags': ['school'], 'completed': False}, {'id': '1', 'title': 'Do your homework', 'deadline': '2016-05-10', 'priority': 'normal', 'tags': ['work'], 'completed': False}]
     True
     """
     pass

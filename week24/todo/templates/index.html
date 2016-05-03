@@ -47,28 +47,28 @@
         <div class="col-md-1"></div>
         <div class="col-md-4"></div>
         <div class="col-md-2">
-          <a class="btn btn-default" href="/?order=deadline" role="button"><span class="glyphicon glyphicon-sort" aria-hidden="true"><span></a>
+            <a class="btn btn-default" href="{{ url_for('todos', **dict(query, order='deadline')) }}" role="button"><span class="glyphicon glyphicon-sort" aria-hidden="true"><span></a>
         </div>
         <div class="col-md-2">
-          <a class="btn btn-default" href="/?order=priority" role="button"><span class="glyphicon glyphicon-sort" aria-hidden="true"><span></a>
+          <a class="btn btn-default" href="{{ url_for('todos', **dict(query, order='priority')) }}" role="button"><span class="glyphicon glyphicon-sort" aria-hidden="true"><span></a>
         </div>
       </div>
       <hr>
       {% for task in tasks %}
       <div class="row">
         <div class="col-md-1">
-            <input class="task-completed" type="checkbox" {% if task.completed %}checked{% endif %} data-task-index="{{ loop.index0 }}">
+            <input class="task-completed" type="checkbox" {% if task.completed %}checked{% endif %} data-task-id="{{ task.id }}">
         </div>
         <div class="col-md-4">{{ task.title }}</div>
         <div class="col-md-2">{{ task.deadline }}</div>
         <div class="col-md-2">{{ task.priority }}</div>
         <div class="col-md-2">
           {% for tag in task.tags %}
-          <a href="/?tag={{ tag }}">{{ tag }}</a>
+          <a href="{{ url_for('todos', **dict(query, tag=tag)) }}">{{ tag }}</a>
           {% endfor %}
         </div>
         <div class="col-md-1">
-            <form method="POST" action="/tasks/{{ loop.index0 }}/remove">
+            <form method="POST" action="/tasks/{{ task.id }}/remove">
             <button type="submin" class="btn btn-default btn-danger" ><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
           </form>
         </div>
@@ -78,13 +78,13 @@
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-2">
-          <a class="btn btn-default" href="/" role="button">All</a>
+          <a class="btn btn-default" href="{{ url_for('todos') }}" role="button">All</a>
         </div>
         <div class="col-md-2">
-          <a class="btn btn-default" href="/?uncompleted" role="button">Active</a>
+          <a class="btn btn-default" href="{{ url_for('todos', **dict(query, status='uncompleted')) }}" role="button">Active</a>
         </div>
         <div class="col-md-2">
-          <a class="btn btn-default" href="/?completed" role="button">Completed</a>
+          <a class="btn btn-default" href="{{ url_for('todos', **dict(query, status='completed')) }}" role="button">Completed</a>
         </div>
         <div class="col-md-2">
           <form method="POST" action="/tasks/clear">
@@ -101,9 +101,9 @@
             for (let task of tasks) {
                 task.addEventListener('change', ev => {
                     let completed = ev.target.checked;
-                    let index = ev.target.dataset.taskIndex;
-                    let url = completed ? `/tasks/${index}/complete` : `/tasks/${index}/uncomplete`;
-                    console.log(`Task ${index} completed ${completed}`);
+                    let id = ev.target.dataset.taskId;
+                    let url = completed ? `/tasks/${id}/complete` : `/tasks/${id}/uncomplete`;
+                    console.log(`Task ${id} completed ${completed}`);
                     fetch(new Request(url, {method: 'POST'}))
                         .then(() => console.log('Complete status set'));
                 });

@@ -1,3 +1,5 @@
+import uuid
+
 from flask import (
     Flask, render_template, request, redirect, url_for
 )
@@ -13,11 +15,10 @@ tasks = []
 @app.route('/')
 def todos():
     result_tasks = tasks
-    completed = 'completed' in request.args
-    uncompleted = 'uncompleted' in request.args
-    if completed:
+    status = request.args.get('status')
+    if status == 'completed':
         result_tasks = get_completed(result_tasks)
-    elif uncompleted:
+    elif status == 'uncompleted':
         result_tasks = get_uncompleted(result_tasks)
     tag = request.args.get('tag')
     if tag:
@@ -27,11 +28,18 @@ def todos():
         result_tasks = order_by_priority(result_tasks)
     elif order == 'deadline':
         result_tasks = order_by_deadline(result_tasks)
+
+    query = {}
+    for k in ('status', 'tag', 'order'):
+        if locals()[k] is not None:
+            query[k] = locals()[k]
+
     return render_template(
         'index.html',
         tasks=result_tasks,
         tags=TAGS,
-        priorities=PRIORITIES.keys()
+        priorities=PRIORITIES.keys(),
+        query=query
     )
 
 
@@ -39,6 +47,7 @@ def todos():
 def create():
     add_task(
         tasks,
+        uuid.uuid4().hex,
         request.form['title'],
         request.form['deadline'],
         request.form['priority'],
@@ -53,21 +62,21 @@ def clear():
     return redirect(url_for('todos'))
 
 
-@app.route('/tasks/<int:index>/remove', methods=['POST'])
-def remove(index):
-    remove_task(tasks, index)
+@app.route('/tasks/<id>/remove', methods=['POST'])
+def remove(id):
+    remove_task(tasks, id)
     return redirect(url_for('todos'))
 
 
-@app.route('/tasks/<int:index>/complete', methods=['POST'])
-def complete(index):
-    complete_task(tasks, index)
+@app.route('/tasks/<id>/complete', methods=['POST'])
+def complete(id):
+    complete_task(tasks, id)
     return 'ok'
 
 
-@app.route('/tasks/<int:index>/uncomplete', methods=['POST'])
-def uncomplete(index):
-    uncomplete_task(tasks, index)
+@app.route('/tasks/<id>/uncomplete', methods=['POST'])
+def uncomplete(id):
+    uncomplete_task(tasks, id)
     return 'ok'
 
 

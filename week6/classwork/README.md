@@ -1,4 +1,4 @@
-# Guess the nuber
+# Guess the number
 
 Крайната цел на това упражнение е да се реализира играта "Guess the number".
 Играта има следните правила:
@@ -34,7 +34,6 @@ You win!
 Do you want to play again? no
 Good buy!
 ```
-"""
 
 Програмата може да измисли произволно число по следния начин:
 

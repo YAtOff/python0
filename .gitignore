@@ -23,6 +23,7 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+.mypy_cache/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -91,3 +92,10 @@ ENV/
 tags
 
 /experiments
+
+# vscode
+.vscode/*
+!.vscode/settings.json.default
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json

@@ -1,0 +1,1 @@
+[Списък с публични Web API-та](https://github.com/toddmotto/public-apis)
